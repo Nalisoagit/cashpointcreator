@@ -156,7 +156,8 @@ public class CreateCashpointFragment extends Fragment {
         waiting = false;
         host.setTagListener(null);
 
-        final String idCarte = bytesToHex(tag.getId());
+        final String idCarte = bytesToHex(tag.getId())
+                .replaceAll("(.{2})(?!$)", "$1:");
         ui.post(() -> {
             if (!isAdded()) return;
             dismiss(scanDialog);
