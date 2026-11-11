@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.app_name, R.string.app_name);
-        toggle.getDrawerArrowDrawable().setColor(0xFFFFFFFF);
+        toggle.getDrawerArrowDrawable().setColor(
+                androidx.core.content.ContextCompat.getColor(this, R.color.primary));
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 

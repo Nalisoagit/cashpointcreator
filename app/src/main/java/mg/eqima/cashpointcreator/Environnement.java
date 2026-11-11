@@ -14,7 +14,7 @@ public final class Environnement {
     private static final String DEV_ID_DISTRIBUTEUR = "2";
 
     // PROD
-    private static final String PROD_BASE_URL = "https://.cashless.eqima.org";
+    private static final String PROD_BASE_URL = "https://cashless.eqima.org";
     private static final String PROD_ID_DISTRIBUTEUR = "7";
 
     public static final String BASE_URL = IS_DEV ? DEV_BASE_URL : PROD_BASE_URL;

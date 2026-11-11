@@ -42,7 +42,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp" android:hint="Numéro (10 chiffres max)">
+                    android:layout_marginBottom="8dp" android:hint="Numéro téléphone">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etNumero"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -113,6 +113,7 @@
             android:id="@+id/btnOk"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="20dp" android:layout_marginBottom="24dp"
-            android:text="OK"/>
+            android:text="OK"
+            app:backgroundTint="@color/accent"/>
     </LinearLayout>
 </ScrollView>

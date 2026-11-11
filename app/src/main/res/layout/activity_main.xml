@@ -12,11 +12,18 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary"
+            android:background="@color/white"
             android:elevation="4dp"
-            app:logo="@drawable/ic_logo"
-            app:titleTextColor="@color/white"
-            app:navigationIconTint="@color/white"/>
+            app:titleTextColor="@color/primary"
+            app:navigationIconTint="@color/primary">
+
+            <ImageView
+                android:layout_width="wrap_content" android:layout_height="34dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_logo"/>
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <FrameLayout android:id="@+id/container"
             android:layout_width="match_parent" android:layout_height="match_parent"/>
@@ -28,5 +35,7 @@
         android:layout_gravity="start"
         android:background="@color/white"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu"/>
+        app:menu="@menu/drawer_menu"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/text_primary"/>
 </androidx.drawerlayout.widget.DrawerLayout>

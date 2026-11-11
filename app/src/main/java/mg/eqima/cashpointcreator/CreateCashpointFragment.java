@@ -71,8 +71,14 @@ public class CreateCashpointFragment extends Fragment {
         etLieu = v.findViewById(R.id.etLieu);
         tvCoord = v.findViewById(R.id.tvCoord);
 
-        v.findViewById(R.id.btnMap).setOnClickListener(x ->
-                mapLauncher.launch(new Intent(requireContext(), MapPickerActivity.class)));
+        v.findViewById(R.id.btnMap).setOnClickListener(x -> {
+            Intent i = new Intent(requireContext(), MapPickerActivity.class);
+            if (latitude != null && longitude != null) {
+                i.putExtra("lat", latitude.doubleValue());
+                i.putExtra("lng", longitude.doubleValue());
+            }
+            mapLauncher.launch(i);
+        });
         v.findViewById(R.id.btnOk).setOnClickListener(x -> onOkClicked());
         refreshCoord();
         return v;
@@ -94,8 +100,9 @@ public class CreateCashpointFragment extends Fragment {
         String password = etPassword.getText() == null ? "" : etPassword.getText().toString();
         String lieu = txt(etLieu), repere = txt(etRepere);
 
-        if (nom.isEmpty() || email.isEmpty() || numero.isEmpty() || password.isEmpty() || lieu.isEmpty()) {
-            toast("Veuillez remplir tous les champs");
+        if (nom.isEmpty() || email.isEmpty() || numero.isEmpty() || password.isEmpty()
+                || lieu.isEmpty() || repere.isEmpty()) {
+            toast("Tous les champs sont obligatoires");
             return;
         }
         if (!numero.matches("\\d{1,10}")) {
@@ -189,7 +196,7 @@ public class CreateCashpointFragment extends Fragment {
                     .setMessage(message)
                     .setPositiveButton("Fermer", null)
                     .show();
-            if (success) resetForm();
+            resetForm();
         });
     }
 
